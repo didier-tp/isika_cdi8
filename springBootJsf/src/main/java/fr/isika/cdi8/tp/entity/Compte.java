@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -23,6 +25,12 @@ import lombok.Setter;
 
 @Entity //de JPA (javax.persistence)
 @Table(name="compte") //par défaut
+@NamedQueries({
+		@NamedQuery(name="Compte.findByClientNumero" , 
+		query="SELECT cpt FROM Compte cpt JOIN cpt.client cli WHERE cli.numero = :numClient"),
+		@NamedQuery(name="Compte.findAll" , 
+		query="SELECT cpt FROM Compte cpt")
+})
 public class Compte {
 	
 	@Id //idenfiant (primary key)
