@@ -1,5 +1,6 @@
 package fr.isika.cdi8.tp.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,7 +39,9 @@ public class Compte {
 	//@Column(name="numero")
 	private Long numero;                             
 	
+	@Column(length = 64)
 	private String label;
+	
 	private Double solde;
 	
 	@ManyToOne()
@@ -58,6 +61,8 @@ public class Compte {
 	public String toString() {
 		return "Compte [numero=" + numero + ", label=" + label + ", solde=" + solde + "]";
 	}
+
+	
 	
 	
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+//import javax.faces.bean.ManagedBean;
+//import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
 import fr.isika.cdi8.tp.entity.Compte;
