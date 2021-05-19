@@ -9,22 +9,61 @@
 <ui:composition template="/templates/common.xhtml">
     <ui:define name="title"> virement </ui:define>
 	<ui:define name="content">
-	<h3>virement</h3> 
-	    <h:messages />
-    <h:form>
-        numCptDeb:<h:selectOneMenu value="#{virementMBean.numCptDeb}"  >
-           <f:selectItems value="#{compteMBean.comptes}" var="cpt"
-                          itemValue="#{cpt.numero}" itemLabel="#{cpt.numero}"/>
-        </h:selectOneMenu> <br/>
-        numCptCred: <h:selectOneMenu value="#{virementMBean.numCptCred}"  >
-           <f:selectItems value="#{compteMBean.comptes}" var="cpt"
-                          itemValue="#{cpt.numero}" itemLabel="#{cpt.numero}"/>
-        </h:selectOneMenu> <br/>
-        montant : <h:inputText value="#{virementMBean.montant}" /> <br/>
-         <h:commandButton value="effectuer virement" 
-                        action="#{virementMBean.doVirement}"/><br/>
-        <h:outputText value="#{virementMBean.message}" />
-    </h:form> 
+	
+	<br/>
+	
+	<div class="card">
+			<div class="card-header bg-primary text-white">
+			   virement
+			 </div>
+            <div class="card-body">
+			   <h:form class="form-horizontal">
+			     <div class="form-group row">
+				    <label class="control-label text-sm-right col-sm-4">numCptDeb:</label> <!-- <span id="spanIdProd"></span> -->
+					<div class="col-sm-8">	
+						<h:selectOneMenu value="#{virementMBean.numCptDeb}" class="form-control" >
+           					<f:selectItems value="#{compteMBean.comptes}" var="cpt"
+                          					itemValue="#{cpt.numero}" itemLabel="#{cpt.numero}"/>
+        				</h:selectOneMenu>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="control-label text-sm-right col-sm-4">numCptCred:</label>
+					<div class="col-sm-8">
+						<h:selectOneMenu value="#{virementMBean.numCptCred}" class="form-control"  >
+           					<f:selectItems value="#{compteMBean.comptes}" var="cpt"
+                          			itemValue="#{cpt.numero}" itemLabel="#{cpt.numero}"/>
+        				</h:selectOneMenu>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="control-label text-sm-right col-sm-4">montant:</label>
+					<div class="col-sm-8">
+					<h:inputText value="#{virementMBean.montant}" 
+					            label="montant" class="form-control"  />
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					  <div class="col-sm-8 offset-sm-4">
+					     <h:commandButton value="effectuer virement" 
+                              action="#{virementMBean.doVirement}"
+                              class="btn btn-primary form-control" />
+					  </div>
+					  
+				 </div>
+			  </h:form>
+				
+		       </div><!-- end of card-body -->
+		     <div class="card-footer">
+		          <h:outputText value="#{virementMBean.message}" />
+                  <h:messages class="RedCssClass"/>
+		     </div>
+			 </div><!-- end of card -->
+	
+
+   
+    <br/>
   
 </ui:define>
 	
