@@ -9,6 +9,7 @@ import javax.enterprise.context.SessionScoped;
 //import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
+
 import fr.isika.cdi8.tp.entity.Compte;
 import fr.isika.cdi8.tp.service.CompteService;
 import lombok.Getter;
@@ -20,10 +21,11 @@ import lombok.Setter;
 @Getter @Setter @NoArgsConstructor
 public class CompteMBean {
 	
+	
 	private Long numClient;
 	
 	@Inject //ou @Autowired
-	private CompteService compteService;
+	private CompteService compteService ;
 	
 	private List<Compte> comptes;//à afficher dans h:dataTable
 
