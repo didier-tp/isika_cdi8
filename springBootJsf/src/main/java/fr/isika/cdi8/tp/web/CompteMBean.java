@@ -35,6 +35,7 @@ public class CompteMBean {
 	}
 	
 	public String doRecupComptesDuClient() {
+		System.out.println("doRecupComptesDuClient() appelé");
 		this.comptes = this.compteService.comptesDuClient(this.numClient);
 		return "comptes.xhtml";
 	}
